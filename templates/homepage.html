@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Final Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		
+<style>
+	body {
+    background-image: linear-gradient(120deg, #91C4FF 0%, #F0F7FF 87%);
+    position: relative;
+    width: 100%;
+    height: 950px;
+  }
+  body:before{
+	position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #000000eb;
+    z-index: -1;
+    opacity: .85;
+  }
+  #cloud-scroll {
+    background: url(https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1485547918/new-york-city-skyline-BIGCITY0117.jpg?itok=po0Op8ou) repeat-x;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    -webkit-animation: 900000s backgroundScroll infinite linear;
+    -moz-animation: 900000s backgroundScroll infinite linear;
+    -o-animation: 900000s backgroundScroll infinite linear;
+    -ms-animation: 900000s backgroundScroll infinite linear;
+    animation: 900000s backgroundScroll infinite linear;
+  }
+  
+  @-webkit-keyframes backgroundScroll {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -99999999px 0;
+    }
+  }
+  
+  @keyframes backgroundScroll {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -99999999px 0;
+    }
+  }
+  .navbar
+	{
+		 background-color: black;
+		border-bottom: 2px solid white;
+		height: 90px;
+	}
+
+.navbar .brand-navbar img:hover
+{
+    opacity: 0.7;
+}
+.navbar ul
+{
+padding: 0px 30px 0px 0px;
+}
+.navbar ul li a{
+    color: white;
+    margin: 10px 0px 0px 10px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.navbar ul li a .fas{
+    padding-right:5px; 
+    padding-left:5px; 
+}
+.navbar ul li a:hover{
+    color: #15b000;
+}
+.navbar ul li.active > a {
+    color: #15b000;
+    font-weight: bold;
+    font-size: 12px;
+    border-left: 3px solid #15b000;
+    border-radius: 40px;
+}
+.iconStyle
+{
+    color: #15b000;
+}
+#clock_timer{	
+    width: 280px;
+   color:#ffffff96;
+    font-weight: 700;
+    
+}
+#ct{
+	color:#ffffff96 !important;
+	font-weight:700;
+	font-size:19px;
+}
+
+/* =========================
+    WEATHER START
+===========================*/
+.weather-app {
+    margin: auto;
+    width: 100%;
+    height: 200px;
+    border: 1px solid white;
+    border-radius: 20px;
+    box-shadow: 10px 10px 50px #888888;
+    overflow: hidden;
+    text-align:center;
+    font-family: auto;
+	font-weight:700;
+	margin-top:25px;
+}
+
+.left {
+    float: left;
+    background: black;
+    padding:10px 110px;
+    width:47%;
+    height:100%;
+    color:white;
+	border-right:2px solid white;
+}
+
+.temperature-celsius {
+    margin-top:30px;
+    margin-bottom:5px;
+    font-size:32px;
+    font-weight: bold;
+    width: 150px;
+}
+.temperature-fahrenheit {
+    display: none;
+    margin-top:30px;
+    margin-bottom:5px;
+    font-size:32px;
+    font-weight: bold;
+    width: 150px;
+}
+
+.location {
+    font-size: 18px;
+    width:100%;
+    width:150px;
+}
+
+.right {
+    float: right;
+    width: 53%;
+    height:100%;
+}
+
+.top {
+    height: 100px;
+    width: 100%;
+    margin: auto;
+    background: black;
+	color:white;
+}
+
+.top img {
+    margin-top: 15px;
+}
+
+.top p {
+    margin-top: -14px;
+    position: relative;
+    text-transform: capitalize;
+}
+.bottom {
+    height: 100px;
+    background: black;
+    color: white;
+    font-weight: bold;
+}
+
+.humidity {
+    padding: 8px;
+}
+/* =========================
+    WEATHER END
+===========================*/
+</style>
+	
+  </head>
+<body id="cloud-scroll">
+		<nav class="navbar navbar-expand-lg navStyle">
+            <a class="brand-navbar" href="#" style="font-size:30px;color:white;font-weight:700;text-decoration:none">Company Inc</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#mainMenu">
+                <span><i class="fas fa-align-right iconStyle"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+
+                <ul class="navbar-nav ml-auto navList">
+                    <li class="nav-item active"><a href="#" class="nav-link"><i class="fas fa-home"></i>HOME<span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link"><i class="fas fa-cogs"></i>Our Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link"><i class="fas fa-briefcase"></i>Customers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link"><i class="fas fa-users"></i>About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+	
+		
+			<div class="container" id="clock_timer">
+				<div class="row">
+					<div class="col-md-12">
+						<h5 class="py-3 font-weight-bold"><span class="date-text"></span>  <span class="badge" id="ct"></span>  </h5>
+					</div>
+				</div>
+			</div>
+
+
+<div class="container">
+		<section id='itroBackground' class="intro">
+		<div class="inner">
+			<div class="content">
+				<div class="weather-app">
+					<div class="left">
+						<div id="toggleCelsius" class="temperature-celsius"><span id="temperatureCelsius">0</span></div> 
+						<div style="display:none;" id='toggleFahrenheit' class="temperature-fahrenheit"><span id="temperatureFahrenheit">0</span></div> 
+
+						<div class="location"><span id="loc">Unknown</span></div>
+						
+					</div>	
+					<div class="right">
+						<div class="top">
+							<img id="icon" width="65px" src="http://openweathermap.org/img/w/11d.png" onerror="this.src='http://openweathermap.org/img/w/11d.png'" />
+							<p id="description"></p>
+						</div>
+						<div class="bottom">
+							<div class="humidity">
+								<span>Humidity: 
+									<span id="humidity">0</span>%
+									<span>💧</span>
+								</span>
+							</div>
+							<div class="wind">
+								<span>Wind: <span id="wind">0</span> m/h | Direction: <span id="direction">N</span></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--<button onclick="toggleCF();" id="toggleCF" class="button">Toggle C/F</button>-->
+			</div>
+		</div>
+	</section>
+</div>
+<script>
+function display_c() {
+      var refresh = 1000; // Refresh rate in milli seconds
+      mytime = setTimeout('display_ct()', refresh)
+    }
+
+    function display_ct() {
+      var timex = new Date();
+      var time = timex.getHours() + ":" + timex.getMinutes() + ":" + timex.getSeconds();
+      document.getElementById('ct').innerHTML = time;
+      display_c();
+    }
+
+
+    var today = new Date();
+    var month = new Array();
+    month[0] = "01"; month[1] = "02"; month[2] = "03"; month[3] = "04"; month[4] = "05"; month[5] = "06";
+    month[6] = "07"; month[7] = "08"; month[8] = "09"; month[9] = "10"; month[10] = "11"; month[11] = "12";
+    var date = today.getFullYear() + '-' + (month[today.getMonth()]) + '-' + today.getDate();
+    jQuery(document).ready(function () { display_ct(); jQuery(".date-text").text(date); });
+</script>
+
+<script>
+	(function WeatherApplication(){
+    this.init =function() {
+        this.startApp();
+    };
+
+/* --------------------------
+    START APP START
+--------------------------- */
+this.startApp = function(){
+    var temperatureCelsius = document.getElementById('temperatureCelsius');
+    var temperatureFahrenheit = document.getElementById('temperatureFahrenheit');
+    var loc = document.getElementById('loc');
+    var icon = document.getElementById('icon');
+    var description = document.getElementById('description');
+    var humidity = document.getElementById('humidity');
+    var wind = document.getElementById('wind');
+    var direction = document.getElementById('direction');
+    
+
+    updateByLaLo();
+    
+    //update(weather);
+};
+
+/* --------------------------
+     START APP END
+--------------------------- */
+
+/* --------------------------
+     UPDATE BY ZIP START
+--------------------------- */
+this.updateByLaLo = function() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            console.log('Geolocation is not supported by this browser.');
+        }
+    
+    function showPosition(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        var url = 'https://fcc-weather-api.glitch.me/api/current?lat='+latitude+'&lon='+longitude;
+        sendRequest(url);
+        }
+}
+/* --------------------------
+     UPDATE BY ZIP END
+--------------------------- */
+
+/* --------------------------
+     SEND REQUEST START
+--------------------------- */
+this.sendRequest = function(url) {
+    
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+
+        if(xhttp.readyState == 4 && xhttp.status == 200){
+            var data = JSON.parse(xhttp.responseText);
+            var weather = {};
+            weather.temperatureCelsius =data.main.temp;
+            weather.temperatureFahrenheit = data.main.temp * 9 / 5 + 32;
+            weather.loc = data.name;
+            weather.icon = data.weather[0].icon;
+            weather.description = data.weather[0].description;
+            weather.humidity = data.main.humidity;
+            weather.wind = data.wind.speed;
+            weather.direction = data.wind.deg;
+            update(weather);
+        }else {
+          console.log('Error: ReadyState:'+xhttp.readyState+' status:'+xhttp.status);
+        }
+    };
+
+    xhttp.open('GET', url, true);
+    xhttp.send();
+}
+
+/* --------------------------
+     SEND REQUEST END
+--------------------------- */
+
+/* --------------------------
+     UPDATE START
+--------------------------- */
+this.update = function(weather) {
+    temperatureCelsius.innerHTML = weather.temperatureCelsius+ ' ℃';
+    temperatureFahrenheit.innerHTML = weather.temperatureFahrenheit+ ' ℉';
+    loc.innerHTML = weather.loc;
+    icon.src = weather.icon;
+    description.innerHTML = weather.description;
+    humidity.innerHTML = weather.humidity;
+    wind.innerHTML = weather.wind;
+    direction.innerHTML = degreesToDirection(weather.direction);
+
+    fixBackground(weather.description);
+
+};
+/* --------------------------
+     UPDATE END
+--------------------------- */
+
+/* --------------------------
+     FIX BACKGROUND START
+--------------------------- */
+
+this.fixBackground = function(backgroundValued){
+    var backgrouund = document.getElementById("background");
+    if(backgroundValued.includes('clouds')) {
+        backgrouund.className = "clouds-background";
+    }else if(backgroundValued.includes('rain')) {
+        backgrouund.className = "rain-background";
+    }else if(backgroundValued.includes('clear')){
+        backgrouund.className = "clear-background";
+    }else {
+        backgrouund.className = "default-background";
+    }
+}
+
+/* --------------------------
+     FIX BACKGROUND END
+--------------------------- */
+
+/* --------------------------
+ DEGREES TO DITECTION START
+--------------------------- */
+this.degreesToDirection = function(degrees){
+    var range = 360/16;
+    var low = 360 - range/2;
+    var high = (low + range) % 360;
+    var angles = ['N', 'NNE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW','NW','NNW'];
+    
+    for(i in angles) {
+        low = (low + range) % 360;
+        high = (high + range) % 360;
+        if(degrees >= low && degrees < high){ 
+            return angles[i];
+        }
+        
+    }
+
+    return 'N';
+}
+/* --------------------------
+ DEGREES TO DITECTION START
+--------------------------- */
+
+/* --------------------------
+    TOGGLE CF START
+--------------------------- */
+this.toggleCF = function() {
+    var fahrenheit = document.getElementById('toggleFahrenheit');
+    var celsius = document.getElementById('toggleCelsius');
+
+    if (fahrenheit.style.display === 'none') {
+        fahrenheit.style.display = 'block';
+        celsius.style.display = 'none';
+    } else {
+        fahrenheit.style.display = 'none';
+        celsius.style.display = 'block';
+    }
+}
+
+/* --------------------------
+    TOGGLE CF START
+--------------------------- */
+
+
+
+    this.init();
+})();
+</script>
+
+</body>
+	
+</html>	
