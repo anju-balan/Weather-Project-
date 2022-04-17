@@ -5,4 +5,5 @@ before_install:
   - pip install -U pip
 install:
   - pip install -r requirements.txt
-script: true
+script: 
+  - coverage run app.py
