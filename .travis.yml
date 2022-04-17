@@ -6,5 +6,4 @@ before_install:
 install:
   - pip install -r requirements.txt
 script: 
-  - coverage erase
-  - coverage run app.py
+  - python app.py
