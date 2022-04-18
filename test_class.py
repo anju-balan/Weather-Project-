@@ -1,5 +1,5 @@
 import unittest
-import webapp
+import app
 
 class TestStringMethods(unittest.TestCase):
 
