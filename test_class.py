@@ -1,5 +1,5 @@
 import unittest
-import app
+from qa.app import app
 
 class TestStringMethods(unittest.TestCase):
 
@@ -19,7 +19,7 @@ class TestStringMethods(unittest.TestCase):
 
     def test_home_page(self):
         home = self.app.get('/', follow_redirects=True)
-        self.assertEqual(home.status_code=200)
+        self.assertEqual(home.status_code, 200)
 
 if __name__ == '__main__':
     unittest.main()
