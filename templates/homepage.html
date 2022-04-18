@@ -335,9 +335,9 @@ this.updateByLaLo = function() {
         }
     
     function showPosition(position) {
-        //var latitude = position.coords.latitude;
-        //var longitude = position.coords.longitude;
-        var url = 'https://fcc-weather-api.freecodecamp.repl.co/api/current?lat=35&lon=139';
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        var url = 'https://fcc-weather-api.glitch.me/api/current?lat='+latitude+'&lon='+longitude;
         sendRequest(url);
         }
 }
