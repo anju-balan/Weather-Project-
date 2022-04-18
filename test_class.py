@@ -1,5 +1,5 @@
 import unittest
-import app
+    import app
 
 class TestStringMethods(unittest.TestCase):
 
@@ -18,8 +18,8 @@ class TestStringMethods(unittest.TestCase):
             s.split(2)
 
     def test_home_page(self):
-        home = self.app.get('/')
-        self.assertIn('Home Page', str(home.data))
+        home = self.app.get('/', follow_redirects=True)
+        self.assertEqual(home.status_code=200)
 
 if __name__ == '__main__':
     unittest.main()
