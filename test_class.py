@@ -17,7 +17,7 @@ class TestStringMethods(unittest.TestCase):
         with self.assertRaises(TypeError):
             s.split(2)
     def setUp(self):
-      self.app = webapp.app.test_client()
+      self.app = app.app.test_client()
       self.app.testing = True
 
     def test_home_page(self):
