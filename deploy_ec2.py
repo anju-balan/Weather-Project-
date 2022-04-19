@@ -10,7 +10,7 @@ sshcon.set_missing_host_key_policy(paramiko.AutoAddPolicy()) # no known_hosts er
 sshcon.connect(hostname, username=myuser, key_filename=mySSHK) # no passwd needed
 
 stdin, stdout, stderr = sshcon.exec_command('/home/ubuntu/weather/Weather_Project/deploy.sh')
-#stdin, stdout, stderr = sshcon.exec_command('/home/ubuntu/Weather-Project-/deploy.sh')
+#stdin, stdout, stderr = sshcon.exec_command('/home/ubuntu/Weather-Project/deploy.sh')
 time.sleep(10)
 sys.exit(0)
 print(stdout.readlines())
