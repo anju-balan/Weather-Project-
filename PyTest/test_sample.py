@@ -21,7 +21,7 @@ def test_setup():
     
     
 
-    driver = webdriver.Chrome(executable_path='/home/travis/virtualenv/python3.8.13/chromedriver/chromedriver.exe',chrome_options=options)
+    driver = webdriver.Chrome(executable_path='/home/travis/virtualenv/python3.8.13/chromedriver',chrome_options=options)
 
     
 
