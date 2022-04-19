@@ -3,6 +3,7 @@ before_script:
   - unzip chromedriver_win32.zip -d /home/travis/virtualenv/python3.8.13
   - export CHROME_BIN=chromium-browser
   - "export DISPLAY=:99.0"
+  - "chmod +x /home/travis/virtualenv/python3.8.13/chromedriver.exe"
   - sleep 3 
 language: python
 python:
