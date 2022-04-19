@@ -20,7 +20,11 @@ def test_setup():
     options.add_argument("--disable-default-apps") 
     
     
+
     driver = webdriver.Chrome(executable_path='/home/travis/virtualenv/python3.8.13/chromedriver.exe',chrome_options=options)
+
+    
+
     driver.implicitly_wait(10)
     #driver.maximize_window()
 
