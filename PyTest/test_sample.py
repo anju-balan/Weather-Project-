@@ -23,7 +23,7 @@ def test_setup():
 
 def test_webpage():
     print("Test case 1 - Check the connection")
-    driver.get('http://localhost:5000/')
+    driver.get('http://ec2-3-14-146-73.us-east-2.compute.amazonaws.com:5000/')
     print("Test case 1 Passed")
     
 def test_datetime():
