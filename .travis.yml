@@ -1,5 +1,5 @@
 before_script:
-  - wget http://chromedriver.storage.googleapis.com/2.10/chromedriver_win32.zip
+  - wget http://chromedriver.storage.googleapis.com/100.0.4896.60/chromedriver_win32.zip  
   - unzip chromedriver_win32.zip -d /home/travis/virtualenv/python3.8.13
   - export CHROME_BIN=chromium-browser
 
