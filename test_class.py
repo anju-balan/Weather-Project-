@@ -1,5 +1,4 @@
 import unittest
-from qa.app import app
 
 class TestStringMethods(unittest.TestCase):
 
@@ -16,10 +15,6 @@ class TestStringMethods(unittest.TestCase):
         # check that s.split fails when the separator is not a string
         with self.assertRaises(TypeError):
             s.split(2)
-
-    def test_home_page(self):
-        home = self.app.get('/', follow_redirects=True)
-        self.assertEqual(home.status_code, 200)
 
 if __name__ == '__main__':
     unittest.main()
