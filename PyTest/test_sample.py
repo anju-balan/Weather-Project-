@@ -10,11 +10,17 @@ from selenium.webdriver.chrome.options import Options
 
 def test_setup():
     global driver 
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
+    options = Options()
+    options.add_argument("--headless")
+    options.binary_location = '/usr/bin/chromium-browser'
+#All the arguments added for chromium to work on selenium
+    options.add_argument("--no-sandbox") #This make Chromium reachable
+    options.add_argument("--no-default-browser-check") #Overrides default choices
+    options.add_argument("--no-first-run")
+    options.add_argument("--disable-default-apps") 
     
     
-    driver = webdriver.Chrome(executable_path='C:/Users/karth/My_Git/AIML_Term3/Software Tools/Weather_Project/PyTest/chromedriver.exe',chrome_options=chrome_options)
+    driver = webdriver.Chrome(executable_path='/home/travis/virtualenv/python3.8.13/chromedriver.exe',chrome_options=options)
     driver.implicitly_wait(10)
     #driver.maximize_window()
 
