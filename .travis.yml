@@ -17,6 +17,6 @@ before_install:
 install:
   - pip install -r requirements.txt
 script: 
-  - python -m pytest -v
+  - python -m pytest -rP
 after_success:
   - python deploy_ec2.py
