@@ -14,7 +14,7 @@ def test_setup():
     chrome_options.add_argument("--headless")
     
     
-    driver = webdriver.Chrome(executable_path='PyTest/chromedriver.exe',chrome_options=chrome_options)
+    driver = webdriver.Chrome(executable_path='chromedriver.exe',chrome_options=chrome_options)
     driver.implicitly_wait(10)
     #driver.maximize_window()
 
