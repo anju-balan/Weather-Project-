@@ -12,12 +12,7 @@ def test_setup():
     global driver 
     options = Options()
     options.add_argument("--headless")
-    options.binary_location = '/usr/bin/chromium-browser'
-#All the arguments added for chromium to work on selenium
-    options.add_argument("--no-sandbox") #This make Chromium reachable
-    options.add_argument("--no-default-browser-check") #Overrides default choices
-    options.add_argument("--no-first-run")
-    options.add_argument("--disable-default-apps") 
+    
     
     
 
