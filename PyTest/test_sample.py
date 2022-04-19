@@ -14,7 +14,7 @@ def test_setup():
     chrome_options.add_argument("--headless")
     
     
-    driver = webdriver.Chrome(executable_path='C:/Users/karth/My_Git/AIML_Term3/Software Tools/Weather_Project/PyTest/chromedriver.exe',chrome_options=chrome_options)
+    driver = webdriver.Chrome(executable_path='PyTest/chromedriver.exe',chrome_options=chrome_options)
     driver.implicitly_wait(10)
     #driver.maximize_window()
 
