@@ -19,8 +19,6 @@ def test_setup():
     driver = webdriver.Chrome(executable_path='/home/travis/virtualenv/python3.8.13/chromedriver',chrome_options=options)
 
     
-
-    driver.implicitly_wait(10)
     #driver.maximize_window()
 
 def test_webpage():
