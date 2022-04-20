@@ -7,5 +7,6 @@ install:
   - pip install -r requirements.txt
 script: 
   - python -m pytest -v
+  
 after_success:
   - python deploy_ec2.py
