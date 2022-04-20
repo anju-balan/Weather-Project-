@@ -1,12 +1,23 @@
+before_script:
+  - wget http://chromedriver.storage.googleapis.com/2.40/chromedriver_linux64.zip  
+  - unzip chromedriver_linux64.zip -d /home/travis/virtualenv/python3.8.13
+  - export CHROME_BIN=google-chrome-stable
+  - "export DISPLAY=:99.0"
+  - "sudo chmod +x /home/travis/virtualenv/python3.8.13/chromedriver"
+  - sleep 3 
 language: python
 python:
   - "3.8"
+services:
+  - xvfb
+addons:
+  chrome: stable
 before_install:
   - pip install -U pip
 install:
   - pip install -r requirements.txt
 script: 
   - python -m pytest -v
-  
+  - python -m pytest -rP
 after_success:
   - python deploy_ec2.py
